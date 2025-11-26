@@ -1,11 +1,11 @@
 package piscine
 
 func ToLower(s string) string {
-	result := []rune(s) // convert string to rune slice
-	for i, r := range result {
-		if r >= 'A' && r <= 'Z' { // if uppercase
-			result[i] = r + ('a' - 'A') // convert to lowercase
+	runes := []rune(s)
+	for i, c := range runes {
+		if c >= 'A' && c <= 'Z' {
+			runes[i] = c + 32
 		}
 	}
-	return string(result) // convert back to string
+	return string(runes)
 }
